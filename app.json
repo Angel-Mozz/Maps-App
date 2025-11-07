@@ -12,15 +12,31 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "plugins": [
+      [
+      "expo-location", {
+        "locationAlwaysAndWhenInUsePermission": "Permitir acceso a tu ubicacion para mostrar el mapa"
+      }
+    ],
+    "expo-asset",
+    "expo-font"
+  ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationInUseUsageDescription" : "Necesitamos tu ubicacion para mostrar el mapa"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions" : [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
